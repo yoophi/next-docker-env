@@ -18,6 +18,27 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Config Test
+
+```
+docker build -t next-docker-env .
+docker run --rm -p 3000:3000 -e FOO=foo -e BAR=bar next-docker-env
+```
+
+<http://localhost:3000> 페이지를 열고, 아래 값이 잘 반영되었는지 확인해보세요.
+
+```
+{
+  "projectDir": "/app",
+  "config": {
+    "hello": "world",
+    "foo": "foo",
+    "bar": "bar"
+  }
+}
+```
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
